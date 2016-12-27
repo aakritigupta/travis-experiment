@@ -8,6 +8,5 @@ script:
     - gem build dpl.gemspec
     - gem install dpl-1.8.*.gem
     - "dpl --provider=elasticbeanstalk || true"
-    - "head -n 1000 $(find ~ -name Gemfile.lock)"
 notifications:
     email: false
