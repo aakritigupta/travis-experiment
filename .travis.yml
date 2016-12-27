@@ -5,6 +5,7 @@ install: ruby --version
 script:
     - git clone https://github.com/travis-ci/dpl.git
     - cd dpl
+    - git checkout ag-fix-nokogiri-problem-third-try
     - gem build dpl.gemspec
     - gem install dpl-1.8.*.gem
     - "dpl --provider=elasticbeanstalk || true"
