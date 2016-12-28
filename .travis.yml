@@ -3,6 +3,7 @@ language: minimal
 sudo: false
 install: ruby --version
 script:
+    - gem install dpl
     - dpl --provider=elasticbeanstalk
 notifications:
     email: false
