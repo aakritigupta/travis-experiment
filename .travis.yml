@@ -3,11 +3,6 @@ language: minimal
 sudo: false
 install: ruby --version
 script:
-    - git clone git@github.com:travis-ci/dpl.git
-    - cd dpl
-    - gem build dpl.gemspec
-    - gem install dpl-1.8.28.gem
-    - "dpl --provider=elasticbeanstalk || true"
-    - "head -n 1000 $(find ~ -name Gemfile.lock)"
+    - dpl --provider=elasticbeanstalk
 notifications:
     email: false
