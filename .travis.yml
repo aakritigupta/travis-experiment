@@ -1,13 +1,15 @@
-dist: precise
-language: minimal
+dist: trusty
+language: php
 sudo: false
-install: ruby --version
-script:
-    - git clone git@github.com:travis-ci/dpl.git
-    - cd dpl
-    - gem build dpl.gemspec
-    - gem install dpl-1.8.28.gem
-    - "dpl --provider=elasticbeanstalk || true"
-    - "head -n 1000 $(find ~ -name Gemfile.lock)"
-notifications:
-    email: false
+php: 5.4
+services:
+  - memcached
+  - redis-server
+  - mysql-5.6
+addons:
+  - hosts
+    - memcached
+    - mysql
+    - redis
+group: stable
+os: linux
