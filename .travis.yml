@@ -1,4 +1,5 @@
 dist: trusty
+language: minimal
 sudo: false
 services:
   - memcached
